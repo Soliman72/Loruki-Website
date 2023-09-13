@@ -1,0 +1,400 @@
+/*start  base style  */
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:ital,wght@0,700;1,200;1,300;1,500&display=swap');
+
+:root {
+  --primary-color : #047aed;
+  --secondary-color: #1c3fa8;
+  --dark-color: #002240;
+  --light-color: #f4f4f4;
+  --success-color: #5cb85c;
+  --error-color: #d9534f;
+}
+
+ * {
+  box-sizing: border-box;
+  margin : 0 ;
+  padding: 0;
+}
+
+body {
+  font-family: 'Lato' , sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+} 
+
+h1 , 
+h2 {
+  font-weight: 300;
+  line-height: 1.2;
+  margin : 10px 0;
+}
+
+p {
+  margin: 10px 0;
+}
+
+img {
+  width: 100%;
+}
+
+/*  Navbar */
+.navbar {
+  background-color: var(--primary-color);
+  height: 70px;
+  color: #fff;
+}
+.navbar .flex {
+  justify-content: space-between;
+}
+
+.navbar ul {
+  display: flex;
+}
+
+.hidden {
+  visibility: hidden;
+  height: 0;
+}
+
+.navbar a {
+  color: #fff;
+  padding: 10px;
+  margin: 0 5px;
+}
+
+
+.navbar a:hover {
+  border-bottom: 1px #fff solid;
+}
+
+/* Showcase  */
+.showcase {
+  background-color: var(--primary-color);
+  color: #fff;
+  height: 400px;
+  position: relative;
+}
+
+.showcase-text {
+  animation: slideInFromLeft 1s;
+}
+
+.showcase .grid {
+  overflow: visible;
+  grid-template-columns: 50% 40%;
+  gap: 30px;
+}
+
+.showcase h1 {
+  font-size: 40px;
+}
+.showcase p {
+  margin: 20px 10px ;
+}
+
+.showcase::before,
+.showcase::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 340px;
+  height: 97px;
+  background-color: var(--primary-color);
+  -ms-transform: skewY(-3deg);
+  -webkit-transform: skewY(-3deg);
+  -moz-transform: skewY(-3deg);
+}
+
+
+.showcase-form {
+  animation: slideInFromRight 1s;
+  position: relative;
+  top: 60px;
+  width: 400px;
+  height: 400px;
+  justify-self: flex-end;
+  padding: 50px;
+  z-index: 100;
+}
+
+.showcase-form .form-control {
+  margin: 30px 0 ;
+}
+
+.showcase-form input[type='text'],
+.showcase-form input[type='email'] {
+  border : none;
+  border-bottom:  1px #333 solid;
+  width: 100%;
+  font-size: 16px;
+  padding: 10px 5px ;
+}
+.showcase-form input:focus {
+  outline: none;
+}
+
+.status {
+  padding: 90px;
+  /* animation: slideInFromBottom 1s ; */
+}
+
+.status-heading {
+  max-width: 500px;
+  margin:  30px auto 40px  ;
+}
+
+.status .grid h3 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.status .grid p {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* CLI */ 
+.cli .grid {
+  grid-template-columns: repeat(3 , 1fr);
+  grid-template-rows: repeat(2 , 1fr);
+}
+.cli .grid >:first-child {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2 ;
+}
+
+/* Cloud  */
+.cloud .grid {
+  grid-template-columns: 4fr 3fr;
+  color: #fff;
+}
+
+/* languages */
+
+.languages .flex {
+  flex-wrap: wrap;
+}
+.languages h1 {
+  font-size: 40px;
+}
+
+.languages .card {
+  text-align: center;
+  margin: 30px 10px 40px ;
+  transition: transform 0.2s ease-in;
+}
+
+.languages .card:hover {
+  transform: translateY(-15px);
+}
+
+/* Features */
+
+.features-head img ,
+.doc-header img {
+  width: 200px;
+  justify-self: flex-end;
+}
+
+.features-sub-head img {
+  width: 300px;
+  justify-self: flex-end;
+}
+
+.features-main .card {
+  padding: 0 10px;
+}
+
+.features-head .grid {
+  padding: 30px;
+}
+
+.features-main .card > i {
+  padding-right: 20px;
+}
+
+.features-main .container > *:first-child {
+  grid-column: 1 / span 3;
+}
+
+.features-main .container > *:nth-child(2)  {
+  grid-column: 1 / span 2;
+}
+
+
+/* Docs */
+
+.doc-main p {
+  font-size: 20px;
+}
+
+.doc-main .bg-light {
+  background-color: var(--light-color);
+  color: #333;
+}
+
+.doc-main li {
+  padding: 5px;
+  border-bottom: 1px #ccc solid;
+}
+
+.doc-main a:hover {
+  font-weight: bold;
+}
+
+.doc-main a {
+  color: #333;
+  font-size: 18px;
+}
+.doc-main .text-primary {
+  color: var(--primary-color);
+}
+
+.doc-main .btn {
+  margin-top: 5px;
+  padding: 10px 30px ;
+}
+
+.doc-main .grid {
+  grid-template-columns: 1fr 2fr;
+  align-items: flex-start;
+}
+
+
+/* footer */
+.footer .social a{
+  padding: 0 5px;
+}
+
+
+/* Animation */
+
+@keyframes slideInFromLeft {
+  
+  0%{
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  
+  0%{
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromTop {
+  
+  0%{
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromBottom {
+  
+  0%{
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+
+/* Tablet and under */
+
+@media(max-width : 768px) {
+  .grid,
+  .showcase .grid ,
+  .cli .grid ,
+  .status .grid,
+  .cloud .grid ,
+  .features-main .grid ,
+  .doc-main .grid  {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .features-head  ,
+  .features-sub-head  ,
+  .doc-header  {
+    text-align: center;
+  }
+  
+  .features-head img ,
+  .features-sub-head img ,
+  .doc-header img {
+    justify-self: center;
+  }
+
+  .showcase .showcase-text {
+    padding: 20px 10px 0;
+    animation: slideInFromTop 1s ease-in;
+  }
+
+  .showcase {
+    height: auto;
+  }
+
+  .showcase .showcase-form {
+    justify-self: center;
+    margin: auto;
+    animation: slideInFromBottom 1s ease-in;
+  }
+
+  .cli .container {
+    margin-top: -30px;
+  }
+
+  .cli .grid >:first-child {
+    grid-column: 1 ;
+    grid-row: 1  ;
+  }
+
+  .features-main .grid .card {
+    padding: 30px;
+    margin-bottom: 10px;
+  }
+
+  .features-main .grid > *:first-child,
+  .features-main .grid > *:nth-child(2) {
+    grid-column: 1;
+  }
+
+}
+
+/* Mobile */
+
+@media(max-width : 500px){
+
+  .navbar {
+    height: 110px;
+  }
+  .navbar .flex {
+    flex-direction: column;
+  }
+  .navbar ul {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 10px;
+  }
+
+}
